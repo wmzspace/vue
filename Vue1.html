@@ -2,23 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="node_modules/vue/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- <script src="node_modules/vue/dist/vue.global.js"></script> -->
     <!-- <link href="css/style.css" rel="stylesheet"> -->
     <title>Vue3 Demo</title>
 
 </head>
 
 <body>
-    <template id="Application">
+
+    <div id="Application">
         <p :[prop]="name" @click="click" :style="{fontSize:fontSize+'px'}">HelloWorld</p>
         <p v-if="1">1</p>
         <p v-else="">1</p>
-        <component is="script">
-            console.log("1");
-        </component>
-    </template>
+        <template v-if="1">
+            <p>!</p>
+        </template>
+    </div>
+
 </body>
 <script>
     const App = {
