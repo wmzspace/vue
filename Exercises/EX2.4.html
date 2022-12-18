@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="..\node_modules\vue\dist\vue.global.js"></script>
+    <title>Vue3 Exercise</title>
+</head>
+
+<body>
+    <div id="Application">
+        <form @submit.prevent="addTask">
+            <span>新建任务</span>
+            <input v-model="task" placeholder="请输入任务">
+            <button type="button" v-show="task" @click="addTask">添加</button>
+        </form>
+        <ol>
+            <li v-for="(task,index) in tasks">
+                <span>{{task}}</span>
+                <button type="button" @click="deleteTask(index)">删除任务</button>
+                <hr>
+            </li>
+        </ol>
+    </div>
+</body>
+<script>
+    const App = {
+        data() {
+            return {
+                task: "",
+                tasks: [],
+            }
+        },
+        methods: {
+            addTask() {
+                this.tasks.push(this.task);
+                this.task = "";
+            },
+            deleteTask(index) {
+                this.tasks.splice(index, 1);
+            }
+        }
+    }
+    Vue.createApp(App).mount("#Application")
+</script>
+
+</html>
