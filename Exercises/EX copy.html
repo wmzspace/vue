@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="..\node_modules\vue\dist\vue.global.js"></script>
+    <title>Vue3 Exercise</title>
+</head>
+
+<body>
+    <div id="Application">
+        <input v-model="searchText" type="text" placeholder="Search">
+    </div>
+</body>
+<script>
+    const App = {
+        data() {
+            return {
+                searchText:""
+            }
+        },
+        watch: {
+            searchText(newValue,oldValue){
+                if(newValue.length>5){
+                    alert(`Too long!\n${oldValue}->${newValue}`)
+                    this.searchText=oldValue
+                }
+            }
+        },
+        method:{
+
+        }
+    }
+    Vue.createApp(App).mount("#Application")
+</script>
+
+</html>
