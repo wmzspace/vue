@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="node_modules\vue\dist\vue.global.js"></script>
+    <!-- <script src="https://unpkg.com/vue@next"></script> -->
+    <title >Vue3 Demo</title>
+</head>
+
+<body>
+
+    <div id="Application">
+        <input v-model="textField">
+        <p>{{textField}}</p>
+    </div>
+
+</body>
+<script>
+    const App = {
+        data() {
+            return {
+                textField:""
+            }
+        },
+
+        methods: {
+
+        }
+    }
+    Vue.createApp(App).mount("#Application")
+</script>
+<script type="text/javascript" src="n"></script>
+
+</html>
